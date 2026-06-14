@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html class="dark scroll-smooth" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Menu — CAFÉ CAFFEINATED</title>
+<meta name="description" content="Explore our curated menu of single-origin roasts, signature brews and fusion fare at Café Caffeinated, Sector 144 Noida."/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+tailwind.config = {
+    darkMode: "class",
+    theme: { extend: {
+        colors: {
+            "primary-fixed": "#f5ded5", "secondary": "#ffb598", "tertiary-container": "#1a1000",
+            "surface-container-low": "#1f1c0f", "surface-variant": "#383526", "on-primary-container": "#8c7972",
+            "outline": "#9b8e89", "on-primary-fixed": "#251913", "surface-container": "#232013",
+            "tertiary-fixed-dim": "#eec068", "secondary-container": "#913401", "surface-bright": "#3d392b",
+            "surface-container-lowest": "#110e04", "primary": "#d8c2b9", "inverse-surface": "#eae2cd",
+            "on-secondary-container": "#ffb597", "tertiary": "#eec068", "secondary-fixed": "#ffdbce",
+            "primary-fixed-dim": "#d8c2b9", "background": "#161307", "primary-container": "#1a0f0a",
+            "on-surface": "#eae2cd", "surface-container-highest": "#383526", "surface": "#161307",
+            "outline-variant": "#4e4541", "surface-container-high": "#2d2a1c", "tertiary-fixed": "#ffdea6",
+            "on-secondary": "#591d00", "on-tertiary": "#412d00", "on-surface-variant": "#d2c4be",
+            "brand-accent": "#B33E2B", "on-background": "#eae2cd"
+        },
+        borderRadius: { DEFAULT: "0.125rem", lg: "0.25rem", xl: "0.5rem", full: "0.75rem" },
+        spacing: { "margin-desktop": "64px", "margin-mobile": "16px", "container-max": "1280px", unit: "4px", gutter: "24px" },
+        fontFamily: { h2: ["Playfair Display"], "display-lg": ["Bebas Neue"], "display-xl": ["Bebas Neue"], "display-lg-mobile": ["Bebas Neue"], "h1-mobile": ["Playfair Display"], "body-lg": ["DM Sans"], "body-md": ["DM Sans"], h1: ["Playfair Display"], "body-sm": ["DM Sans"], h3: ["Playfair Display"], "label-caps": ["DM Sans"] },
+        fontSize: { h2: ["32px",{lineHeight:"40px",fontWeight:"600"}], "display-lg": ["80px",{lineHeight:"80px",fontWeight:"400"}], "display-xl": ["120px",{lineHeight:"100px",letterSpacing:"0.02em",fontWeight:"400"}], "display-lg-mobile": ["56px",{lineHeight:"56px",fontWeight:"400"}], "h1-mobile": ["36px",{lineHeight:"44px",fontWeight:"700"}], "body-lg": ["18px",{lineHeight:"28px",fontWeight:"400"}], "body-md": ["16px",{lineHeight:"24px",fontWeight:"400"}], h1: ["48px",{lineHeight:"56px",fontWeight:"700"}], "body-sm": ["14px",{lineHeight:"20px",fontWeight:"300"}], h3: ["24px",{lineHeight:"32px",fontWeight:"600"}], "label-caps": ["12px",{lineHeight:"16px",letterSpacing:"0.1em",fontWeight:"500"}] }
+    }}
+}
+</script>
+<style>
+    body { font-family: 'DM Sans', sans-serif; }
+    .grain-overlay { position: fixed; top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9999;opacity:0.04;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E"); }
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+    nav.scrolled { background: rgba(22,19,7,0.95) !important; backdrop-filter: blur(16px); border-bottom: 1px solid rgba(78,69,65,0.3); }
+    .menu-tab.active { color: #ffb598; border-bottom: 2px solid #ffb598; }
+    .menu-section { display: none; }
+    .menu-section.active { display: block; }
+    .dotted-leader::after { content:""; flex-grow:1; border-bottom:1px dotted rgba(78,69,65,0.5); margin:0 12px; position:relative; top:-4px; }
+    .price-badge { font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.05em; }
+    @keyframes fadeIn { from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:translateY(0)} }
+    .fade-in { animation: fadeIn 0.5s ease forwards; }
+</style>
+</head>
+<body class="bg-background text-on-background selection:bg-brand-accent selection:text-white antialiased">
+<div class="grain-overlay"></div>
+
+<!-- NAV -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop py-5 bg-transparent transition-all duration-500" id="mainNav">
+    <a class="flex items-center gap-3" href="index.html">
+        <div class="w-10 h-10 rounded-full border border-outline flex items-center justify-center">
+            <span class="font-display-lg-mobile text-[18px] text-primary-fixed leading-none tracking-wider">CC</span>
+        </div>
+        <span class="font-display-lg text-[28px] text-primary-fixed uppercase tracking-widest hidden md:block leading-none">CAFÉ CAFFEINATED</span>
+    </a>
+    <div class="hidden md:flex items-center gap-8">
+        <a class="font-label-caps text-label-caps text-secondary border-b border-secondary uppercase tracking-[0.2em] pb-1" href="menu.html">The Menu</a>
+        <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors uppercase tracking-[0.2em]" href="about.html">Our Story</a>
+        <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors uppercase tracking-[0.2em]" href="gallery.html">Gallery</a>
+        <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors uppercase tracking-[0.2em]" href="reviews.html">Reviews</a>
+        <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors uppercase tracking-[0.2em]" href="visit.html">Visit</a>
+        <a class="bg-brand-accent text-white px-7 py-3 font-label-caps text-label-caps tracking-[0.15em] hover:brightness-110 transition-all uppercase" href="reservations.html">Book a Table</a>
+    </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="pt-40 pb-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto relative overflow-hidden">
+    <div class="absolute top-20 left-0 pointer-events-none opacity-[0.04] select-none overflow-hidden w-full">
+        <span class="font-display-xl text-on-surface whitespace-nowrap" style="font-size: clamp(80px, 15vw, 180px);">THE MENU</span>
+    </div>
+    <div class="relative z-10">
+        <span class="font-label-caps text-label-caps text-secondary tracking-[0.3em] uppercase block mb-4">Craft & Curation</span>
+        <h1 class="font-h1 text-h1-mobile md:text-h1 text-on-surface mb-6 max-w-xl">The Digital<br/><span class="text-primary italic font-normal">Menu</span></h1>
+        <p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg">Sourced globally, roasted locally. Every item is a culinary statement designed for the discerning palate.</p>
+    </div>
+</section>
+
+<!-- CATEGORY TABS -->
+<section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+    <div class="flex gap-0 overflow-x-auto border-b border-outline-variant/20 mb-16 no-scrollbar" id="menuTabs">
+        <button class="menu-tab active px-6 py-4 font-label-caps text-label-caps uppercase tracking-widest whitespace-nowrap transition-all" data-tab="coffee">Coffees</button>
+        <button class="menu-tab px-6 py-4 font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest whitespace-nowrap hover:text-primary transition-all" data-tab="brews">Cold Brews</button>
+        <button class="menu-tab px-6 py-4 font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest whitespace-nowrap hover:text-primary transition-all" data-tab="food">Fusion Fare</button>
+        <button class="menu-tab px-6 py-4 font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest whitespace-nowrap hover:text-primary transition-all" data-tab="pastry">Pastries</button>
+        <button class="menu-tab px-6 py-4 font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest whitespace-nowrap hover:text-primary transition-all" data-tab="specials">Specials</button>
+    </div>
+
+    <!-- COFFEES -->
+    <div class="menu-section active fade-in pb-32" id="tab-coffee">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-0">
+            <!-- Featured Item -->
+            <div class="md:col-span-2 mb-12 relative overflow-hidden border border-outline-variant/20 bg-surface-container group">
+                <div class="grid grid-cols-1 md:grid-cols-2">
+                    <img alt="Signature espresso" class="w-full h-64 md:h-full object-cover opacity-70 group-hover:opacity-90 group-hover:scale-105 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqT9PH1ctVEzqzXhFQsb9bI8FJ7-tTIgWC5yToWbQdA2Qd60Oy-Cf1MEp6faSpXpIL9THg5xYF0ubYKLrzzldGFTRkmDbDtuQakkXckhg8uST4YWfN2EaZH1JziXFOgNoNHIV02eQm9HFfU4Pu8CwC6niusush8cbuuZP3gK4V4xEPgjZtz6ci5SKa7NbveKiwcOWTRndgFe-lwC48NTRzjc6KDm4DSDDqGXSecZvb_BXzSzsE7EornEqlxv6tIew3qiIBTSb8UeqH"/>
+                    <div class="p-10 flex flex-col justify-center">
+                        <span class="font-label-caps text-label-caps text-secondary tracking-widest uppercase mb-3 block">Chef's Signature</span>
+                        <h2 class="font-h2 text-h2 text-on-surface mb-4">The Sanctuary Espresso</h2>
+                        <p class="font-body-md text-body-md text-on-surface-variant mb-6 leading-relaxed">A triple-extraction single-origin roast from Coorg estates. Notes of dark cacao, cardamom, and dried citrus peel. Served with sparkling water and a piece of 80% dark chocolate.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="price-badge text-secondary text-3xl">₹ 380</span>
+                            <span class="font-label-caps text-label-caps text-on-surface-variant tracking-widest uppercase">Double Shot</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Regular Items -->
+            <div id="coffeeList"></div>
+            <div id="coffeeList2"></div>
+        </div>
+    </div>
+
+    <!-- COLD BREWS -->
+    <div class="menu-section pb-32" id="tab-brews"><div id="brewList" class="grid grid-cols-1 md:grid-cols-2 gap-0"></div></div>
+    <!-- FUSION FARE -->
+    <div class="menu-section pb-32" id="tab-food"><div id="foodList" class="grid grid-cols-1 md:grid-cols-2 gap-0"></div></div>
+    <!-- PASTRIES -->
+    <div class="menu-section pb-32" id="tab-pastry"><div id="pastryList" class="grid grid-cols-1 md:grid-cols-2 gap-0"></div></div>
+    <!-- SPECIALS -->
+    <div class="menu-section pb-32" id="tab-specials"><div id="specialsList" class="grid grid-cols-1 md:grid-cols-2 gap-0"></div></div>
+</section>
+
+<!-- FOOTER -->
+<footer class="w-full border-t border-outline-variant/20 bg-surface-container-lowest py-16">
+    <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-8">
+        <div>
+            <div class="font-display-lg text-[36px] text-secondary leading-none tracking-tighter uppercase mb-2">CAFÉ CAFFEINATED</div>
+            <p class="font-body-sm text-on-surface-variant opacity-60">Sector 144, Noida · 08:00 — 22:00</p>
+        </div>
+        <div class="flex gap-8">
+            <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary transition-colors tracking-widest" href="index.html">Home</a>
+            <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary transition-colors tracking-widest" href="about.html">Story</a>
+            <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary transition-colors tracking-widest" href="reservations.html">Reserve</a>
+        </div>
+        <p class="font-body-sm text-on-surface-variant opacity-40 text-[11px] tracking-widest">© 2024 CAFÉ CAFFEINATED</p>
+    </div>
+</footer>
+
+<script>
+// Menu data
+const menuData = {
+    coffee: [
+        { name: "Ethiopian Pour Over", desc: "Bright, floral. Notes of jasmine and blueberry from Yirgacheffe highlands.", price: "₹ 280", tag: "Single Origin" },
+        { name: "Cortado", desc: "Equal parts espresso and silky steamed milk. Clean, balanced, precise.", price: "₹ 220", tag: "Classic" },
+        { name: "Cardamom Latte", desc: "House espresso with freshly cracked green cardamom and oat milk.", price: "₹ 260", tag: "Signature" },
+        { name: "Flat White", desc: "Ristretto shots with velvety micro-foam. The minimalist's choice.", price: "₹ 230", tag: "Classic" },
+        { name: "Siphon Coffee", desc: "Theatre in a cup. Vacuum-brewed Sumatra blend with earthy, smoky depth.", price: "₹ 420", tag: "Specialty" },
+        { name: "Americano", desc: "Rich espresso extended with hot spring water. Bold and unapologetic.", price: "₹ 180", tag: "Classic" },
+        { name: "Turmeric Latte", desc: "Golden milk blend with raw turmeric, ginger and coconut milk.", price: "₹ 240", tag: "Wellness" },
+        { name: "Black Eye", desc: "Drip coffee with two espresso shots. Intensity, refined.", price: "₹ 300", tag: "Strong" },
+    ],
+    brews: [
+        { name: "Cold Brew Concentrate", desc: "18-hour steep of Brazilian Cerrado. Smooth, chocolatey, no bitterness.", price: "₹ 250", tag: "House Special" },
+        { name: "Nitro Cold Brew", desc: "Nitrogen-infused cold brew. Creamy cascade, zero dairy.", price: "₹ 290", tag: "Signature" },
+        { name: "Cinnamon Cold Brew", desc: "Cold brew steeped with Ceylon cinnamon bark. Warm spice, cool finish.", price: "₹ 260", tag: "Seasonal" },
+        { name: "Kyoto Slow Drip", desc: "Ice drip method over 8 hours. Crystal-clear, complex and clean.", price: "₹ 380", tag: "Specialty" },
+        { name: "Cold Brew Tonic", desc: "Cold brew over tonic water with orange peel. Refreshingly unexpected.", price: "₹ 280", tag: "Creative" },
+        { name: "Salted Caramel Cold Brew", desc: "House cold brew with house-made salted caramel and oat milk.", price: "₹ 300", tag: "Popular" },
+    ],
+    food: [
+        { name: "Avocado Sourdough Toast", desc: "Whipped ricotta, heirloom tomato, microgreens on charcoal sourdough.", price: "₹ 380", tag: "All Day" },
+        { name: "Shakshuka", desc: "Slow-simmered tomato, harissa, two poached eggs, za'atar oil. Served with pita.", price: "₹ 420", tag: "Bestseller" },
+        { name: "Korean Bibimbap Bowl", desc: "Short grain rice, gochujang, seasonal vegetables, fried egg, sesame.", price: "₹ 460", tag: "Fusion" },
+        { name: "Mediterranean Grain Bowl", desc: "Farro, roasted chickpeas, tzatziki, pickled cucumber, sumac-dusted.", price: "₹ 440", tag: "Healthy" },
+        { name: "Truffle Mushroom Toast", desc: "Wild mushroom ragout, truffle oil, shaved parmesan, fresh thyme.", price: "₹ 480", tag: "Premium" },
+        { name: "Miso Glazed Salmon", desc: "White miso marinated salmon, pickled ginger, sesame greens.", price: "₹ 620", tag: "Premium" },
+        { name: "Paneer Tikka Sandwich", desc: "House-spiced paneer, mint chutney, pickled onion in toasted focaccia.", price: "₹ 360", tag: "Indian Fusion" },
+        { name: "Club Sandwich", desc: "Multilayered with grilled chicken, aged cheddar, smoked bacon, aioli.", price: "₹ 420", tag: "Classic" },
+    ],
+    pastry: [
+        { name: "Croissant au Beurre", desc: "Laminated with French butter over 72 hours. Honeyed, flaky, perfect.", price: "₹ 180", tag: "Viennoiserie" },
+        { name: "Dark Chocolate Fondant", desc: "Warm centre of 72% Madagascan chocolate. Served with crème fraîche.", price: "₹ 280", tag: "Dessert" },
+        { name: "Orange Almond Cake", desc: "Whole orange boiled and ground. Naturally gluten-free and intensely fragrant.", price: "₹ 240", tag: "Gluten-Free" },
+        { name: "Kouign-Amann", desc: "Caramelised Breton pastry. Buttery, crunchy, deeply satisfying.", price: "₹ 200", tag: "Specialty" },
+        { name: "Cardamom Bun", desc: "Scandinavian-style bun with house-ground green cardamom and pearl sugar.", price: "₹ 160", tag: "Bakery" },
+        { name: "Basque Burnt Cheesecake", desc: "Deliberately scorched top, impossibly creamy interior. Served daily.", price: "₹ 320", tag: "Bestseller" },
+    ],
+    specials: [
+        { name: "Caffeinated Tasting Flight", desc: "Three espresso preparations: ristretto, lungo and filtered. A study in contrast.", price: "₹ 580", tag: "Experience" },
+        { name: "Sunday Brunch Set", desc: "Shakshuka + cold brew + pastry of the day. Sundays only, 10:00–14:00.", price: "₹ 680", tag: "Weekend" },
+        { name: "The Library Set", desc: "Any hot brew + a pastry + 90 minutes in the reading lounge.", price: "₹ 620", tag: "Exclusive" },
+        { name: "Sunset Pairing", desc: "Cold brew tonic + Korean Bibimbap + mignardise. 17:00–19:30 daily.", price: "₹ 780", tag: "Curated" },
+    ]
+};
+
+function buildMenuItems(items, containerId) {
+    const container = document.getElementById(containerId);
+    if(!container) return;
+    container.innerHTML = items.map(item => `
+        <div class="flex items-start justify-between gap-4 p-6 border-b border-outline-variant/15 hover:bg-surface-container/50 transition-colors group">
+            <div class="flex-1">
+                <div class="flex items-center gap-3 mb-2">
+                    <h3 class="font-h3 text-[18px] text-on-surface group-hover:text-secondary transition-colors" style="font-family:'Playfair Display',serif;">${item.name}</h3>
+                    <span class="font-label-caps text-[10px] text-secondary border border-secondary/30 px-2 py-0.5 uppercase tracking-widest whitespace-nowrap">${item.tag}</span>
+                </div>
+                <p class="font-body-sm text-body-sm text-on-surface-variant">${item.desc}</p>
+            </div>
+            <div class="price-badge text-secondary text-xl whitespace-nowrap pt-1">${item.price}</div>
+        </div>
+    `).join('');
+}
+
+// Build all tabs
+const half = Math.ceil(menuData.coffee.length / 2);
+buildMenuItems(menuData.coffee.slice(0, half), 'coffeeList');
+buildMenuItems(menuData.coffee.slice(half), 'coffeeList2');
+buildMenuItems(menuData.brews, 'brewList');
+buildMenuItems(menuData.food, 'foodList');
+buildMenuItems(menuData.pastry, 'pastryList');
+buildMenuItems(menuData.specials, 'specialsList');
+
+// Tab switching
+document.getElementById('menuTabs').addEventListener('click', e => {
+    const btn = e.target.closest('[data-tab]');
+    if(!btn) return;
+    document.querySelectorAll('.menu-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.menu-section').forEach(s => s.classList.remove('active'));
+    btn.classList.add('active');
+    const section = document.getElementById('tab-' + btn.dataset.tab);
+    section.classList.add('active', 'fade-in');
+    setTimeout(() => section.classList.remove('fade-in'), 600);
+});
+
+// Nav scroll
+window.addEventListener('scroll', () => {
+    document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 60);
+});
+</script>
+</body>
+</html>

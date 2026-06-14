@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html class="dark scroll-smooth" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Gallery — CAFÉ CAFFEINATED</title>
+<meta name="description" content="Visual stories from the sanctuary. Explore the spaces, brews and moments that define Café Caffeinated in Sector 144, Noida."/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+tailwind.config = {
+    darkMode:"class",
+    theme:{extend:{
+        colors:{"primary-fixed":"#f5ded5","secondary":"#ffb598","surface-container-low":"#1f1c0f","surface-variant":"#383526","outline":"#9b8e89","on-primary-fixed":"#251913","surface-container":"#232013","secondary-container":"#913401","surface-container-lowest":"#110e04","primary":"#d8c2b9","on-secondary-container":"#ffb597","tertiary":"#eec068","primary-fixed-dim":"#d8c2b9","background":"#161307","primary-container":"#1a0f0a","on-surface":"#eae2cd","surface-container-highest":"#383526","surface":"#161307","outline-variant":"#4e4541","surface-container-high":"#2d2a1c","on-secondary":"#591d00","on-surface-variant":"#d2c4be","brand-accent":"#B33E2B","on-background":"#eae2cd"},
+        borderRadius:{DEFAULT:"0.125rem",lg:"0.25rem",xl:"0.5rem",full:"0.75rem"},
+        spacing:{"margin-desktop":"64px","margin-mobile":"16px","container-max":"1280px",unit:"4px",gutter:"24px"},
+        fontFamily:{h2:["Playfair Display"],"display-lg":["Bebas Neue"],"display-xl":["Bebas Neue"],"display-lg-mobile":["Bebas Neue"],"h1-mobile":["Playfair Display"],"body-lg":["DM Sans"],"body-md":["DM Sans"],h1:["Playfair Display"],"body-sm":["DM Sans"],h3:["Playfair Display"],"label-caps":["DM Sans"]},
+        fontSize:{h2:["32px",{lineHeight:"40px",fontWeight:"600"}],"display-lg":["80px",{lineHeight:"80px",fontWeight:"400"}],"display-xl":["120px",{lineHeight:"100px",letterSpacing:"0.02em",fontWeight:"400"}],"display-lg-mobile":["56px",{lineHeight:"56px",fontWeight:"400"}],"h1-mobile":["36px",{lineHeight:"44px",fontWeight:"700"}],"body-lg":["18px",{lineHeight:"28px",fontWeight:"400"}],"body-md":["16px",{lineHeight:"24px",fontWeight:"400"}],h1:["48px",{lineHeight:"56px",fontWeight:"700"}],"body-sm":["14px",{lineHeight:"20px",fontWeight:"300"}],h3:["24px",{lineHeight:"32px",fontWeight:"600"}],"label-caps":["12px",{lineHeight:"16px",letterSpacing:"0.1em",fontWeight:"500"}]}
+    }}
+}
+</script>
+<style>
+    body { font-family:'DM Sans',sans-serif; }
+    .grain-overlay{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9999;opacity:0.04;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");}
+    .material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 300,'GRAD' 0,'opsz' 24;}
+    nav.scrolled{background:rgba(22,19,7,0.95)!important;backdrop-filter:blur(16px);border-bottom:1px solid rgba(78,69,65,0.3);}
+    .gallery-item img { transition: transform 0.7s ease, opacity 0.5s ease, filter 0.5s ease; filter: grayscale(30%); }
+    .gallery-item:hover img { transform: scale(1.05); filter: grayscale(0); opacity: 0.95; }
+    .gallery-item .overlay { opacity:0; transition: opacity 0.4s ease; }
+    .gallery-item:hover .overlay { opacity:1; }
+    /* Lightbox */
+    #lightbox { display:none; position:fixed; inset:0; z-index:1000; background:rgba(22,19,7,0.97); align-items:center; justify-content:center; }
+    #lightbox.open { display:flex; }
+    #lightbox img { max-width:90vw; max-height:85vh; object-fit:contain; }
+    .filter-btn.active { color: #ffb598; border-color: #ffb598; }
+    @keyframes fadeIn{from{opacity:0}to{opacity:1}} 
+    .fade-in{animation:fadeIn 0.5s ease}
+    .scroll-reveal{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;}
+    .scroll-reveal.visible{opacity:1;transform:translateY(0);}
+</style>
+</head>
+<body class="bg-background text-on-background selection:bg-brand-accent selection:text-white antialiased">
+<div class="grain-overlay"></div>
+
+<!-- NAV -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop py-5 bg-transparent transition-all duration-500" id="mainNav">
+    <a class="flex items-center gap-3" href="index.html">
+        <div class="w-10 h-10 rounded-full border border-outline flex items-center justify-center">
+            <span class="font-display-lg-mobile text-[18px] text-primary-fixed leading-none tracking-wider">CC</span>
+        </div>
+        <span class="font-display-lg text-[28px] text-primary-fixed uppercase tracking-widest hidden md:block leading-none">CAFÉ CAFFEINATED</span>
+    </a>
+    <div class="hidden md:flex items-center gap-8">
+        <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors uppercase tracking-[0.2em]" href="menu.html">The Menu</a>
+        <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors uppercase tracking-[0.2em]" href="about.html">Our Story</a>
+        <a class="font-label-caps text-label-caps text-secondary border-b border-secondary uppercase tracking-[0.2em] pb-1" href="gallery.html">Gallery</a>
+        <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors uppercase tracking-[0.2em]" href="reviews.html">Reviews</a>
+        <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors uppercase tracking-[0.2em]" href="visit.html">Visit</a>
+        <a class="bg-brand-accent text-white px-7 py-3 font-label-caps text-label-caps tracking-[0.15em] hover:brightness-110 transition-all uppercase" href="reservations.html">Book a Table</a>
+    </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="pt-40 pb-16 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+    <div class="scroll-reveal">
+        <span class="font-label-caps text-label-caps text-secondary tracking-[0.3em] uppercase block mb-4">Visual Stories</span>
+        <h1 class="font-h1 text-h1-mobile md:text-h1 text-on-surface mb-6">The Gallery</h1>
+        <p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg">Spaces, brews, and quiet moments from the sanctuary.</p>
+    </div>
+</section>
+
+<!-- FILTER TABS -->
+<section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-12">
+    <div class="flex gap-4 flex-wrap">
+        <button class="filter-btn active border border-outline-variant/30 px-6 py-2 font-label-caps text-label-caps uppercase tracking-widest transition-all hover:border-secondary" data-filter="all">All</button>
+        <button class="filter-btn border border-outline-variant/30 px-6 py-2 font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest transition-all hover:border-secondary hover:text-secondary" data-filter="space">The Space</button>
+        <button class="filter-btn border border-outline-variant/30 px-6 py-2 font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest transition-all hover:border-secondary hover:text-secondary" data-filter="brews">Brews</button>
+        <button class="filter-btn border border-outline-variant/30 px-6 py-2 font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest transition-all hover:border-secondary hover:text-secondary" data-filter="food">Fare</button>
+    </div>
+</section>
+
+<!-- GALLERY GRID -->
+<section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto pb-32">
+    <div class="columns-1 md:columns-2 lg:columns-3 gap-4 space-y-4" id="galleryGrid"></div>
+</section>
+
+<!-- LIGHTBOX -->
+<div id="lightbox">
+    <button class="absolute top-6 right-8 text-on-surface-variant hover:text-secondary transition-colors" id="lightboxClose">
+        <span class="material-symbols-outlined text-4xl">close</span>
+    </button>
+    <button class="absolute left-6 text-on-surface-variant hover:text-secondary transition-colors" id="lightboxPrev">
+        <span class="material-symbols-outlined text-4xl">chevron_left</span>
+    </button>
+    <button class="absolute right-6 text-on-surface-variant hover:text-secondary transition-colors" id="lightboxNext">
+        <span class="material-symbols-outlined text-4xl">chevron_right</span>
+    </button>
+    <div class="flex flex-col items-center gap-4">
+        <img alt="Gallery image" id="lightboxImg" src=""/>
+        <p class="font-label-caps text-label-caps text-on-surface-variant tracking-widest uppercase" id="lightboxCaption"></p>
+    </div>
+</div>
+
+<!-- CTA -->
+<section class="bg-surface-container-lowest border-t border-outline-variant/20 py-20 px-margin-mobile md:px-margin-desktop">
+    <div class="max-w-container-max mx-auto text-center">
+        <h2 class="font-h2 text-h2 text-on-surface mb-4">Come see it in person.</h2>
+        <p class="font-body-md text-body-md text-on-surface-variant mb-8">No photograph can capture the feeling of this space.</p>
+        <a class="bg-brand-accent text-white px-10 py-4 font-label-caps text-label-caps tracking-[0.2em] hover:brightness-110 transition-all uppercase inline-block" href="reservations.html">Reserve Your Seat</a>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="w-full border-t border-outline-variant/20 bg-surface-container-lowest py-12">
+    <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-6">
+        <div class="font-display-lg text-[32px] text-secondary leading-none tracking-tighter uppercase">CAFÉ CAFFEINATED</div>
+        <p class="font-body-sm text-on-surface-variant opacity-40 text-[11px] tracking-widest">© 2024 CAFÉ CAFFEINATED. ALL RIGHTS RESERVED.</p>
+    </div>
+</footer>
+
+<script>
+const images = [
+    { src: "https://lh3.googleusercontent.com/aida-public/AB6AXuCosQ5MBj9sgvE3tkwNwCVt4MttuBaFQEGh6_yD-LRKuYnCDdaDESxTgonrtXubMqOAGyowj7CMcTKzB7bIuclxP8s62QMo-3zjzaG1wstoVk1nJ3uI1RnU9MTb0zUbFFnNNnjikaIOPdZhv2Gl8fKHn5nbi4qYQiBwdBK0SjrBRjOFFr_2LHD9I6U1yZZ1-E92B1oiwTFBSgroZD_Ga2_d7jqniHsqVg0W3YWSNO1G44eqVNKmXO0SkaS3bhwF5OuwKnBaz-kxVvoT", caption: "The Interior Haven", cat: "space" },
+    { src: "https://lh3.googleusercontent.com/aida-public/AB6AXuBqT9PH1ctVEzqzXhFQsb9bI8FJ7-tTIgWC5yToWbQdA2Qd60Oy-Cf1MEp6faSpXpIL9THg5xYF0ubYKLrzzldGFTRkmDbDtuQakkXckhg8uST4YWfN2EaZH1JziXFOgNoNHIV02eQm9HFfU4Pu8CwC6niusush8cbuuZP3gK4V4xEPgjZtz6ci5SKa7NbveKiwcOWTRndgFe-lwC48NTRzjc6KDm4DSDDqGXSecZvb_BXzSzsE7EornEqlxv6tIew3qiIBTSb8UeqH", caption: "Precision Pour Over", cat: "brews" },
+    { src: "https://lh3.googleusercontent.com/aida-public/AB6AXuBP-KLY6WLGrwGGCkhj9GrHMQKgF7Gd8rmQ0uYz_9XuDq1xOyyxYi6kTimnjUEs2nlxrkUVFqzvFuGLa7SdVM28m-5VyCKE9tuuk9_kNs2feX6TfqPcQwuYSe2ixN-ngn_GIIDb8ouZsqALKfpuMTBhQM0P89AAc3r5Kh-Iy5N9WmZAXt5mCKdBr5qkE_j6tVy7bqwWlUlkVZ_JyuxiwOhoHsxgkFrRCDSL9lHsaH0z0ysDscMwRUVj-97g34F3WOPV-SsV9Dnpf_ka", caption: "The Glasshouse Patio", cat: "space" },
+    { src: "https://lh3.googleusercontent.com/aida-public/AB6AXuCbFAPPcncPmp46bK2Dws5Fi50opj55gwhW4iRsCBtUdFPSJKoxGda_GjfTg5GH7OFdz-1eeRQIT334EAFOjldKhgaz9AxXeDmm4XX_zviUA7hfq4aNhLQkJfs0OdjOnEMbfGHU255vJ_vzeDzYbvgYqX1iRIqNXmmKyxRL8kvb_yr8KHdKMlSdEOlr83u9SKILnnuGYUZS38MP1A3FL5lnogy_okEJCLSiVdZd2MVqom-mdGmxHBXxpF9faSOviYJ9p_iB5zR2jcWz", caption: "Brutalist Botany", cat: "space" },
+    { src: "https://lh3.googleusercontent.com/aida-public/AB6AXuADUYAihNHKkKJt4b2WLGawp20O5d2XqQs8CBEHsJZAURNOqehEs4-S-bMqJk6IdrzMk1r1gEcVyz4g0whwJ8Ar2UaUw-3fCTkSqwQd1rtV3TIxzSeNgdrlUsllwsT2SX9oyeADVf8Fke5KVPYml2x3S1kRNjX-uLE8JpVUdjKfE-upYXOHOyj_287Dl6anuA3vd3RQnMfuxmOtmohQjdKLy01OC7sf-YqtdIR7B8o0fTwQKZBC_LKfJXLIWvwAfFVeNu6x3t4vLRjD", caption: "Latte Artistry", cat: "brews" },
+    { src: "https://lh3.googleusercontent.com/aida-public/AB6AXuCsKD3U7AJJPgvqS4vcNi460I80eIm6Hl_LP18rlqX5rvehZB2FzQhnGx54F8JfcVPWCE_KQxuMuHPjCk-SsxhKUpFjPTxmJ3HI_biAptIn9CMS6uysWLi828LXL0EZtePut7M818FH1EE214AEA4EnsMZlSJARbRu4g7nRq23cRFQ5U4WsObIEEquyc_o2ymQ_K8d7h519216J2EP_E1OUXfdH5M6jtj4PeAUuaBowNDTUzfxb7KL3sdke1c8Z6q5ElV6EBT9AWc7Q7", caption: "The Reading Room", cat: "space" },
+    { src: "https://lh3.googleusercontent.com/aida-public/AB6AXuAgmizYB5xgJuuhWIgQv-6ZfvymCoFPlYRxeTBRq_fZaw5GmY0jUCa6xhsIimtb-EpbEoDcR714wqrGltiLc6I3Q_weeL5sJJejD_Aj001zSTY3L_IO0wOpy3qGWoJmU05dBs2J6Ip68luR64x5mjoqI3xd_Drdl1C-CsRBJu8GyqCTlCbkrEoGb8ZHAk-vIuAsjqb8wbprrfbC15xFaqejCqcD8UdWWDCCLK-dtN3184AWY2dBQfmBpPNvRZnIwmvIbQ5eYrP4zbR8", caption: "Dark Chocolate Fondant", cat: "food" },
+    { src: "https://lh3.googleusercontent.com/aida-public/AB6AXuDisYcRmapOpNj6dR6muVOAX_8gO70BxZ-aeLLT3RSi0FXI0j6MGwQjhsh-qUuQb0evK8unIquzDmtNcK96JeQHY6yit7BNGXqdlq0F158RlIVmsO5e7Y6DNbufM79HJGXDOG_43PcrqkUG2C9q4uLi8XxzobM507YMPVseOoJNlL0J5u1grmjdCR3Q1X-1S76Qs_7_awlvgz3jt0AiF31swJwEFLD-O6Irc-tSSidPW44oseSPrsrqTUenhH51qwE5J_ZdrW_-Dsak", caption: "The Sanctuary Fern", cat: "space" },
+];
+
+let currentIndex = 0;
+let filtered = [...images];
+
+function buildGallery(items) {
+    const grid = document.getElementById('galleryGrid');
+    grid.innerHTML = items.map((img, i) => `
+        <div class="gallery-item relative overflow-hidden border border-outline-variant/20 cursor-pointer group break-inside-avoid mb-4" data-index="${i}">
+            <img src="${img.src}" alt="${img.caption}" class="w-full h-auto object-cover opacity-80"/>
+            <div class="overlay absolute inset-0 bg-background/60 flex flex-col items-center justify-center gap-3">
+                <span class="material-symbols-outlined text-secondary text-4xl">zoom_in</span>
+                <span class="font-label-caps text-label-caps text-primary uppercase tracking-widest">${img.caption}</span>
+            </div>
+        </div>
+    `).join('');
+    grid.querySelectorAll('.gallery-item').forEach(item => {
+        item.addEventListener('click', () => openLightbox(parseInt(item.dataset.index)));
+    });
+}
+
+function openLightbox(idx) {
+    currentIndex = idx;
+    document.getElementById('lightboxImg').src = filtered[idx].src;
+    document.getElementById('lightboxCaption').textContent = filtered[idx].caption;
+    document.getElementById('lightbox').classList.add('open');
+}
+
+document.getElementById('lightboxClose').addEventListener('click', () => document.getElementById('lightbox').classList.remove('open'));
+document.getElementById('lightboxPrev').addEventListener('click', () => openLightbox((currentIndex - 1 + filtered.length) % filtered.length));
+document.getElementById('lightboxNext').addEventListener('click', () => openLightbox((currentIndex + 1) % filtered.length));
+document.addEventListener('keydown', e => {
+    if(e.key === 'Escape') document.getElementById('lightbox').classList.remove('open');
+    if(e.key === 'ArrowLeft') openLightbox((currentIndex - 1 + filtered.length) % filtered.length);
+    if(e.key === 'ArrowRight') openLightbox((currentIndex + 1) % filtered.length);
+});
+
+document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const f = btn.dataset.filter;
+        filtered = f === 'all' ? [...images] : images.filter(i => i.cat === f);
+        buildGallery(filtered);
+    });
+});
+
+buildGallery(filtered);
+
+window.addEventListener('scroll', () => {
+    document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 60);
+    document.querySelectorAll('.scroll-reveal').forEach(el => {
+        if(el.getBoundingClientRect().top < window.innerHeight - 80) el.classList.add('visible');
+    });
+});
+document.querySelectorAll('.scroll-reveal').forEach(el => {
+    if(el.getBoundingClientRect().top < window.innerHeight - 80) el.classList.add('visible');
+});
+</script>
+</body>
+</html>

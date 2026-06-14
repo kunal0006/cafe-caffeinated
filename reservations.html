@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html class="dark scroll-smooth" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Reserve a Table — CAFÉ CAFFEINATED</title>
+<meta name="description" content="Book your table at Café Caffeinated, Sector 144 Noida. Secure your intentional pause — reserve online in seconds."/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+tailwind.config = {
+    darkMode:"class",
+    theme:{extend:{
+        colors:{"primary-fixed":"#f5ded5","secondary":"#ffb598","surface-container-low":"#1f1c0f","surface-variant":"#383526","outline":"#9b8e89","surface-container":"#232013","surface-container-lowest":"#110e04","primary":"#d8c2b9","on-secondary-container":"#ffb597","tertiary":"#eec068","primary-fixed-dim":"#d8c2b9","background":"#161307","primary-container":"#1a0f0a","on-surface":"#eae2cd","surface-container-highest":"#383526","surface":"#161307","outline-variant":"#4e4541","surface-container-high":"#2d2a1c","on-secondary":"#591d00","on-surface-variant":"#d2c4be","brand-accent":"#B33E2B","on-background":"#eae2cd"},
+        borderRadius:{DEFAULT:"0.125rem",lg:"0.25rem",xl:"0.5rem",full:"0.75rem"},
+        spacing:{"margin-desktop":"64px","margin-mobile":"16px","container-max":"1280px",unit:"4px",gutter:"24px"},
+        fontFamily:{h2:["Playfair Display"],"display-lg":["Bebas Neue"],"display-xl":["Bebas Neue"],"display-lg-mobile":["Bebas Neue"],"h1-mobile":["Playfair Display"],"body-lg":["DM Sans"],"body-md":["DM Sans"],h1:["Playfair Display"],"body-sm":["DM Sans"],h3:["Playfair Display"],"label-caps":["DM Sans"]},
+        fontSize:{h2:["32px",{lineHeight:"40px",fontWeight:"600"}],"display-lg":["80px",{lineHeight:"80px",fontWeight:"400"}],"display-xl":["120px",{lineHeight:"100px",letterSpacing:"0.02em",fontWeight:"400"}],"display-lg-mobile":["56px",{lineHeight:"56px",fontWeight:"400"}],"h1-mobile":["36px",{lineHeight:"44px",fontWeight:"700"}],"body-lg":["18px",{lineHeight:"28px",fontWeight:"400"}],"body-md":["16px",{lineHeight:"24px",fontWeight:"400"}],h1:["48px",{lineHeight:"56px",fontWeight:"700"}],"body-sm":["14px",{lineHeight:"20px",fontWeight:"300"}],h3:["24px",{lineHeight:"32px",fontWeight:"600"}],"label-caps":["12px",{lineHeight:"16px",letterSpacing:"0.1em",fontWeight:"500"}]}
+    }}
+}
+</script>
+<style>
+    body{font-family:'DM Sans',sans-serif;}
+    .grain-overlay{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9999;opacity:0.04;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");}
+    .material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 300,'GRAD' 0,'opsz' 24;}
+    nav.scrolled{background:rgba(22,19,7,0.95)!important;backdrop-filter:blur(16px);border-bottom:1px solid rgba(78,69,65,0.3);}
+    .scroll-reveal{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;}
+    .scroll-reveal.visible{opacity:1;transform:translateY(0);}
+    .time-btn.selected{background:#ffb598;color:#591d00;border-color:#ffb598;}
+    .time-btn.unavailable{opacity:0.35;cursor:not-allowed;text-decoration:line-through;}
+    input[type="date"]::-webkit-calendar-picker-indicator{filter:invert(0.7);}
+    .step-indicator{transition:all 0.3s;}
+    .step-indicator.active{background:#ffb598;color:#591d00;}
+    .step-indicator.done{background:#4e4541;color:#d2c4be;}
+    /* Success screen */
+    #successScreen{display:none;}
+    #successScreen.show{display:flex;}
+    @keyframes scaleIn{from{transform:scale(0.8);opacity:0}to{transform:scale(1);opacity:1}}
+    .scale-in{animation:scaleIn 0.5s ease forwards;}
+</style>
+</head>
+<body class="bg-background text-on-background selection:bg-brand-accent selection:text-white antialiased">
+<div class="grain-overlay"></div>
+
+<!-- NAV -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop py-5 bg-transparent transition-all duration-500" id="mainNav">
+    <a class="flex items-center gap-3" href="index.html">
+        <div class="w-10 h-10 rounded-full border border-outline flex items-center justify-center">
+            <span class="font-display-lg-mobile text-[18px] text-primary-fixed leading-none tracking-wider">CC</span>
+        </div>
+        <span class="font-display-lg text-[28px] text-primary-fixed uppercase tracking-widest hidden md:block leading-none">CAFÉ CAFFEINATED</span>
+    </a>
+    <div class="hidden md:flex items-center gap-8">
+        <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors uppercase tracking-[0.2em]" href="menu.html">The Menu</a>
+        <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors uppercase tracking-[0.2em]" href="about.html">Our Story</a>
+        <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors uppercase tracking-[0.2em]" href="gallery.html">Gallery</a>
+        <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors uppercase tracking-[0.2em]" href="reviews.html">Reviews</a>
+        <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors uppercase tracking-[0.2em]" href="visit.html">Visit</a>
+        <a class="font-label-caps text-label-caps text-secondary border-b border-secondary uppercase tracking-[0.2em] pb-1" href="reservations.html">Reservations</a>
+    </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="pt-40 pb-16 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center scroll-reveal">
+        <div class="md:col-span-7">
+            <span class="font-label-caps text-label-caps text-secondary uppercase tracking-[0.4em] mb-6 block">Reservation Experience</span>
+            <h1 class="font-h1-mobile text-h1-mobile md:text-display-lg md:font-display-lg text-primary leading-[0.9] mb-10 tracking-tighter uppercase">An Intentional<br/><span class="text-secondary">Pause</span></h1>
+            <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl leading-relaxed opacity-90">At Café Caffeinated, we treat every cup as a ritual. Secure your space in our brutalist garden sanctuary where architectural precision meets organic serenity.</p>
+        </div>
+        <div class="md:col-span-5 relative group">
+            <div class="aspect-[4/5] overflow-hidden border border-outline-variant/30 relative">
+                <img class="w-full h-full object-cover transform transition-transform duration-[2s] group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbFAPPcncPmp46bK2Dws5Fi50opj55gwhW4iRsCBtUdFPSJKoxGda_GjfTg5GH7OFdz-1eeRQIT334EAFOjldKhgaz9AxXeDmm4XX_zviUA7hfq4aNhLQkJfs0OdjOnEMbfGHU255vJ_vzeDzYbvgYqX1iRIqNXmmKyxRL8kvb_yr8KHdKMlSdEOlr83u9SKILnnuGYUZS38MP1A3FL5lnogy_okEJCLSiVdZd2MVqom-mdGmxHBXxpF9faSOviYJ9p_iB5zR2jcWz" alt="Café interior"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent"></div>
+            </div>
+            <div class="absolute -bottom-6 -left-6 w-32 h-32 border-l border-b border-secondary/30"></div>
+        </div>
+    </div>
+</section>
+
+<!-- BOOKING FORM -->
+<section class="bg-surface-container-lowest/50 py-24 border-y border-outline-variant/10">
+    <div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">
+            <!-- Form -->
+            <div class="bg-surface-container p-10 md:p-14 border border-outline-variant/20 shadow-2xl relative overflow-hidden scroll-reveal">
+                <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-secondary to-transparent opacity-30"></div>
+                <!-- Step Indicators -->
+                <div class="flex gap-2 mb-10">
+                    <div class="step-indicator active w-8 h-8 rounded-full flex items-center justify-center font-label-caps text-[11px] tracking-widest" id="step1ind">1</div>
+                    <div class="flex-1 h-px bg-outline-variant/30 self-center"></div>
+                    <div class="step-indicator w-8 h-8 rounded-full border border-outline-variant/30 flex items-center justify-center font-label-caps text-[11px] text-on-surface-variant tracking-widest" id="step2ind">2</div>
+                    <div class="flex-1 h-px bg-outline-variant/30 self-center"></div>
+                    <div class="step-indicator w-8 h-8 rounded-full border border-outline-variant/30 flex items-center justify-center font-label-caps text-[11px] text-on-surface-variant tracking-widest" id="step3ind">3</div>
+                </div>
+                <div class="mb-10">
+                    <h2 class="font-h1 text-h2 text-primary mb-3 tracking-tight uppercase">Reserve Your Table</h2>
+                    <div class="w-14 h-[2px] bg-secondary"></div>
+                </div>
+                <form id="reservationForm">
+                    <!-- Step 1: Date & Guests -->
+                    <div id="formStep1">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                            <div class="flex flex-col space-y-3">
+                                <label class="font-label-caps text-label-caps text-secondary uppercase tracking-[0.2em] opacity-70">Date of Visit</label>
+                                <input class="bg-background/50 border border-outline-variant/30 text-on-surface px-4 py-4 focus:border-secondary focus:ring-0 transition-all outline-none rounded-none font-body-md" type="date" id="visitDate" min=""/>
+                            </div>
+                            <div class="flex flex-col space-y-3">
+                                <label class="font-label-caps text-label-caps text-secondary uppercase tracking-[0.2em] opacity-70">Guest Count</label>
+                                <select class="bg-background/50 border border-outline-variant/30 text-on-surface px-4 py-4 focus:border-secondary focus:ring-0 transition-all outline-none rounded-none font-body-md appearance-none cursor-pointer" id="guestCount">
+                                    <option>Solo Retreat (1)</option>
+                                    <option>2 Guests</option>
+                                    <option>3 Guests</option>
+                                    <option selected>4 Guests</option>
+                                    <option>5 Guests</option>
+                                    <option>Private Room (6+)</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!-- Seating Preference -->
+                        <div class="mb-8">
+                            <label class="font-label-caps text-label-caps text-secondary uppercase tracking-[0.2em] opacity-70 block mb-4">Seating Area</label>
+                            <div class="grid grid-cols-2 gap-3">
+                                <button class="time-btn selected border border-outline-variant/30 py-3 font-label-caps text-label-caps text-on-surface tracking-widest hover:border-secondary transition-all text-left px-4" data-seat="indoor" type="button">
+                                    <span class="material-symbols-outlined text-sm mr-1">chair</span> Indoor Haven
+                                </button>
+                                <button class="time-btn border border-outline-variant/30 py-3 font-label-caps text-label-caps text-on-surface-variant tracking-widest hover:border-secondary transition-all text-left px-4" data-seat="patio" type="button">
+                                    <span class="material-symbols-outlined text-sm mr-1">park</span> Glasshouse Patio
+                                </button>
+                                <button class="time-btn border border-outline-variant/30 py-3 font-label-caps text-label-caps text-on-surface-variant tracking-widest hover:border-secondary transition-all text-left px-4" data-seat="lounge" type="button">
+                                    <span class="material-symbols-outlined text-sm mr-1">menu_book</span> Reading Lounge
+                                </button>
+                                <button class="time-btn border border-outline-variant/30 py-3 font-label-caps text-label-caps text-on-surface-variant tracking-widest hover:border-secondary transition-all text-left px-4" data-seat="any" type="button">
+                                    <span class="material-symbols-outlined text-sm mr-1">shuffle</span> No Preference
+                                </button>
+                            </div>
+                        </div>
+                        <button class="w-full bg-secondary text-on-secondary py-5 font-label-caps text-label-caps tracking-[0.25em] hover:brightness-110 transition-all uppercase" type="button" onclick="goStep(2)">Select Time →</button>
+                    </div>
+
+                    <!-- Step 2: Time & Details -->
+                    <div id="formStep2" class="hidden">
+                        <div class="flex flex-col space-y-5 mb-8">
+                            <label class="font-label-caps text-label-caps text-secondary uppercase tracking-[0.2em] opacity-70">Available Times</label>
+                            <div class="grid grid-cols-3 md:grid-cols-4 gap-3" id="timeSlots"></div>
+                        </div>
+                        <div class="flex flex-col space-y-3 mb-8">
+                            <label class="font-label-caps text-label-caps text-secondary uppercase tracking-[0.2em] opacity-70">Special Requests</label>
+                            <textarea class="bg-background/50 border border-outline-variant/30 text-on-surface px-4 py-4 focus:border-secondary focus:ring-0 transition-all outline-none rounded-none placeholder:text-outline/50 font-body-md" placeholder="Dietary notes, celebration, seating preference..." rows="3"></textarea>
+                        </div>
+                        <div class="flex gap-3">
+                            <button class="flex-1 border border-outline-variant/30 text-on-surface-variant py-4 font-label-caps text-label-caps tracking-widest hover:border-secondary transition-all uppercase" type="button" onclick="goStep(1)">← Back</button>
+                            <button class="flex-1 bg-secondary text-on-secondary py-4 font-label-caps text-label-caps tracking-[0.25em] hover:brightness-110 transition-all uppercase" type="button" onclick="goStep(3)">Your Details →</button>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Personal Info -->
+                    <div id="formStep3" class="hidden">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label class="font-label-caps text-label-caps text-secondary uppercase tracking-[0.2em] opacity-70 block mb-2">Full Name</label>
+                                <input class="w-full bg-background/50 border border-outline-variant/30 text-on-surface px-4 py-4 focus:border-secondary focus:ring-0 transition-all outline-none rounded-none font-body-md" placeholder="Arjun Mehta" type="text"/>
+                            </div>
+                            <div>
+                                <label class="font-label-caps text-label-caps text-secondary uppercase tracking-[0.2em] opacity-70 block mb-2">Phone Number</label>
+                                <input class="w-full bg-background/50 border border-outline-variant/30 text-on-surface px-4 py-4 focus:border-secondary focus:ring-0 transition-all outline-none rounded-none font-body-md" placeholder="+91 98765 43210" type="tel"/>
+                            </div>
+                        </div>
+                        <div class="mb-8">
+                            <label class="font-label-caps text-label-caps text-secondary uppercase tracking-[0.2em] opacity-70 block mb-2">Email Address</label>
+                            <input class="w-full bg-background/50 border border-outline-variant/30 text-on-surface px-4 py-4 focus:border-secondary focus:ring-0 transition-all outline-none rounded-none font-body-md" placeholder="you@email.com" type="email"/>
+                        </div>
+                        <!-- Booking Summary -->
+                        <div class="bg-background/30 border border-outline-variant/20 p-5 mb-8 space-y-2">
+                            <div class="font-label-caps text-[11px] text-secondary uppercase tracking-widest mb-3">Booking Summary</div>
+                            <div class="flex justify-between font-body-sm text-body-sm text-on-surface-variant">
+                                <span>Date</span><span class="text-on-surface" id="summaryDate">—</span>
+                            </div>
+                            <div class="flex justify-between font-body-sm text-body-sm text-on-surface-variant">
+                                <span>Time</span><span class="text-on-surface" id="summaryTime">—</span>
+                            </div>
+                            <div class="flex justify-between font-body-sm text-body-sm text-on-surface-variant">
+                                <span>Guests</span><span class="text-on-surface" id="summaryGuests">—</span>
+                            </div>
+                            <div class="flex justify-between font-body-sm text-body-sm text-on-surface-variant">
+                                <span>Seating</span><span class="text-on-surface" id="summarySeating">—</span>
+                            </div>
+                        </div>
+                        <div class="flex gap-3">
+                            <button class="flex-1 border border-outline-variant/30 text-on-surface-variant py-4 font-label-caps text-label-caps tracking-widest hover:border-secondary transition-all uppercase" type="button" onclick="goStep(2)">← Back</button>
+                            <button class="flex-1 bg-brand-accent text-white py-4 font-label-caps text-label-caps tracking-[0.2em] hover:brightness-110 transition-all uppercase" type="submit">Confirm Reservation</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Mood & Details -->
+            <div class="flex flex-col justify-center space-y-16 pt-8 lg:pt-0 scroll-reveal" style="transition-delay:0.15s">
+                <div class="space-y-6">
+                    <h3 class="font-h2 text-h2 text-primary italic leading-relaxed font-normal">"Silence is the most profound ingredient in our coffee."</h3>
+                    <p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed opacity-80">Our Noida sanctuary is designed for intellectual focus. We maintain a soft-volume policy to ensure every guest can enjoy their intentional pause without distraction.</p>
+                </div>
+                <div class="space-y-5">
+                    <div class="flex items-center justify-between font-label-caps text-label-caps text-on-surface-variant border-b border-outline-variant/20 pb-4">
+                        <span class="flex items-center gap-3 tracking-widest"><span class="material-symbols-outlined text-[20px] text-secondary">location_on</span>LOCATION</span>
+                        <span class="text-primary tracking-widest">SECTOR 144, NOIDA</span>
+                    </div>
+                    <div class="flex items-center justify-between font-label-caps text-label-caps text-on-surface-variant border-b border-outline-variant/20 pb-4">
+                        <span class="flex items-center gap-3 tracking-widest"><span class="material-symbols-outlined text-[20px] text-secondary">schedule</span>HOURS</span>
+                        <span class="text-primary tracking-widest">08:00 — 22:00</span>
+                    </div>
+                    <div class="flex items-center justify-between font-label-caps text-label-caps text-on-surface-variant border-b border-outline-variant/20 pb-4">
+                        <span class="flex items-center gap-3 tracking-widest"><span class="material-symbols-outlined text-[20px] text-secondary">local_cafe</span>EXPERIENCE</span>
+                        <span class="text-primary tracking-widest">90 MINUTE SLOTS</span>
+                    </div>
+                    <div class="flex items-center justify-between font-label-caps text-label-caps text-on-surface-variant border-b border-outline-variant/20 pb-4">
+                        <span class="flex items-center gap-3 tracking-widest"><span class="material-symbols-outlined text-[20px] text-secondary">call</span>PHONE</span>
+                        <span class="text-primary tracking-widest">+91 120 456 7890</span>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="overflow-hidden border border-outline-variant/20">
+                        <img class="w-full h-40 object-cover grayscale hover:grayscale-0 transition-all duration-1000 transform hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADUYAihNHKkKJt4b2WLGawp20O5d2XqQs8CBEHsJZAURNOqehEs4-S-bMqJk6IdrzMk1r1gEcVyz4g0whwJ8Ar2UaUw-3fCTkSqwQd1rtV3TIxzSeNgdrlUsllwsT2SX9oyeADVf8Fke5KVPYml2x3S1kRNjX-uLE8JpVUdjKfE-upYXOHOyj_287Dl6anuA3vd3RQnMfuxmOtmohQjdKLy01OC7sf-YqtdIR7B8o0fTwQKZBC_LKfJXLIWvwAfFVeNu6x3t4vLRjD" alt="Latte art"/>
+                    </div>
+                    <div class="overflow-hidden border border-outline-variant/20">
+                        <img class="w-full h-40 object-cover grayscale hover:grayscale-0 transition-all duration-1000 transform hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsKD3U7AJJPgvqS4vcNi460I80eIm6Hl_LP18rlqX5rvehZB2FzQhnGx54F8JfcVPWCE_KQxuMuHPjCk-SsxhKUpFjPTxmJ3HI_biAptIn9CMS6uysWLi828LXL0EZtePut7M818FH1EE214AEA4EnsMZlSJARbRu4g7nRq23cRFQ5U4WsObIEEquyc_o2ymQ_K8d7h519216J2EP_E1OUXfdH5M6jtj4PeAUuaBowNDTUzfxb7KL3sdke1c8Z6q5ElV6EBT9AWc7Q7" alt="Interior"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SUCCESS SCREEN -->
+<div class="fixed inset-0 z-50 bg-background/98 backdrop-blur-xl flex-col items-center justify-center gap-8 text-center px-8" id="successScreen">
+    <div class="scale-in">
+        <div class="w-20 h-20 rounded-full border-2 border-secondary flex items-center justify-center mx-auto mb-8">
+            <span class="material-symbols-outlined text-secondary text-4xl" style="font-variation-settings:'FILL' 1,'wght' 300,'GRAD' 0,'opsz' 24">check_circle</span>
+        </div>
+        <h2 class="font-display-lg text-[48px] text-on-surface uppercase mb-4">Reservation Confirmed</h2>
+        <p class="font-body-lg text-body-lg text-on-surface-variant mb-2">We'll see you at <span class="text-secondary" id="confirmTime">—</span> on <span class="text-secondary" id="confirmDate">—</span>.</p>
+        <p class="font-body-md text-body-md text-on-surface-variant opacity-70 mb-10">A confirmation has been sent to your email. We recommend arriving 5 minutes early to settle into the space.</p>
+        <a class="bg-brand-accent text-white px-10 py-4 font-label-caps text-label-caps tracking-[0.2em] hover:brightness-110 transition-all uppercase inline-block" href="index.html">Return Home</a>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="w-full border-t border-outline-variant/20 bg-surface-container-lowest py-16">
+    <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-8">
+        <div class="font-display-lg text-[36px] text-secondary leading-none tracking-tighter uppercase">CAFÉ CAFFEINATED</div>
+        <div class="flex gap-8">
+            <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary transition-colors tracking-widest" href="index.html">Home</a>
+            <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary transition-colors tracking-widest" href="menu.html">Menu</a>
+            <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary transition-colors tracking-widest" href="visit.html">Visit</a>
+        </div>
+        <p class="font-body-sm text-on-surface-variant opacity-40 text-[11px] tracking-widest">© 2024 CAFÉ CAFFEINATED</p>
+    </div>
+</footer>
+
+<script>
+    // Set min date to today
+    document.getElementById('visitDate').min = new Date().toISOString().split('T')[0];
+
+    const times = [
+        { t: '08:00', avail: true }, { t: '09:30', avail: true }, { t: '11:00', avail: false },
+        { t: '12:30', avail: true }, { t: '14:00', avail: true }, { t: '15:30', avail: false },
+        { t: '17:00', avail: true }, { t: '18:30', avail: true }, { t: '20:00', avail: true },
+        { t: '21:00', avail: true },
+    ];
+    let selectedTime = '08:00';
+
+    function buildTimeSlots() {
+        const container = document.getElementById('timeSlots');
+        container.innerHTML = times.map(s => `
+            <button class="time-btn border border-outline-variant/30 py-3 font-label-caps text-label-caps text-on-surface tracking-widest hover:border-secondary transition-all ${!s.avail ? 'unavailable' : ''} ${s.t === selectedTime && s.avail ? 'selected' : ''}"
+                data-time="${s.t}" type="button" ${!s.avail ? 'disabled' : ''}>${s.t}</button>
+        `).join('');
+        container.querySelectorAll('.time-btn:not(.unavailable)').forEach(btn => {
+            btn.addEventListener('click', () => {
+                container.querySelectorAll('.time-btn').forEach(b => b.classList.remove('selected'));
+                btn.classList.add('selected');
+                selectedTime = btn.dataset.time;
+            });
+        });
+    }
+
+    // Seating selection
+    document.querySelectorAll('[data-seat]').forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.querySelectorAll('[data-seat]').forEach(b => b.classList.remove('selected'));
+            btn.classList.add('selected');
+        });
+    });
+
+    let currentStep = 1;
+    function goStep(step) {
+        document.getElementById('formStep1').classList.add('hidden');
+        document.getElementById('formStep2').classList.add('hidden');
+        document.getElementById('formStep3').classList.add('hidden');
+        document.getElementById('formStep' + step).classList.remove('hidden');
+        [1,2,3].forEach(i => {
+            const ind = document.getElementById('step' + i + 'ind');
+            ind.classList.remove('active','done');
+            if(i < step) ind.classList.add('done');
+            if(i === step) ind.classList.add('active');
+        });
+        currentStep = step;
+        if(step === 2) buildTimeSlots();
+        if(step === 3) updateSummary();
+    }
+
+    function updateSummary() {
+        const date = document.getElementById('visitDate').value;
+        const guests = document.getElementById('guestCount').value;
+        const seat = document.querySelector('[data-seat].selected')?.textContent.trim() || '—';
+        document.getElementById('summaryDate').textContent = date ? new Date(date + 'T12:00').toLocaleDateString('en-IN', {weekday:'short',day:'numeric',month:'short',year:'numeric'}) : '—';
+        document.getElementById('summaryTime').textContent = selectedTime;
+        document.getElementById('summaryGuests').textContent = guests;
+        document.getElementById('summarySeating').textContent = seat;
+    }
+
+    document.getElementById('reservationForm').addEventListener('submit', e => {
+        e.preventDefault();
+        const date = document.getElementById('visitDate').value;
+        document.getElementById('confirmTime').textContent = selectedTime;
+        document.getElementById('confirmDate').textContent = date ? new Date(date + 'T12:00').toLocaleDateString('en-IN', {weekday:'long',day:'numeric',month:'long',year:'numeric'}) : '—';
+        const ss = document.getElementById('successScreen');
+        ss.classList.add('show');
+        setTimeout(() => ss.querySelector('.scale-in').style.animation = 'scaleIn 0.5s ease forwards', 50);
+    });
+
+    window.addEventListener('scroll', () => {
+        document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 60);
+        document.querySelectorAll('.scroll-reveal').forEach(el => {
+            if(el.getBoundingClientRect().top < window.innerHeight - 60) el.classList.add('visible');
+        });
+    });
+    document.querySelectorAll('.scroll-reveal').forEach(el => {
+        if(el.getBoundingClientRect().top < window.innerHeight - 60) el.classList.add('visible');
+    });
+</script>
+</body>
+</html>

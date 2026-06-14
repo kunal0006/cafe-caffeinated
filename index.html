@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html class="dark scroll-smooth" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CAFÉ CAFFEINATED — Sector 144, Noida</title>
+<meta name="description" content="Noida's premier sanctuary for the intellectual spirit. A blend of heritage luxury and brutalist botany. Reserve your table today."/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+tailwind.config = {
+    darkMode: "class",
+    theme: {
+        extend: {
+            colors: {
+                "primary-fixed": "#f5ded5",
+                "on-error": "#690005",
+                "surface-dim": "#161307",
+                "on-primary": "#3b2d27",
+                "secondary": "#ffb598",
+                "on-background": "#eae2cd",
+                "tertiary-container": "#1a1000",
+                "on-secondary-fixed": "#370e00",
+                "surface-container-low": "#1f1c0f",
+                "surface-variant": "#383526",
+                "on-primary-container": "#8c7972",
+                "outline": "#9b8e89",
+                "error": "#ffb4ab",
+                "on-primary-fixed-variant": "#53433d",
+                "on-primary-fixed": "#251913",
+                "surface-container": "#232013",
+                "tertiary-fixed-dim": "#eec068",
+                "secondary-container": "#913401",
+                "surface-bright": "#3d392b",
+                "surface-container-lowest": "#110e04",
+                "primary": "#d8c2b9",
+                "inverse-surface": "#eae2cd",
+                "inverse-on-surface": "#343022",
+                "on-secondary-container": "#ffb597",
+                "tertiary": "#eec068",
+                "on-tertiary-fixed": "#271900",
+                "inverse-primary": "#6c5b54",
+                "secondary-fixed": "#ffdbce",
+                "on-error-container": "#ffdad6",
+                "secondary-fixed-dim": "#ffb598",
+                "primary-fixed-dim": "#d8c2b9",
+                "on-tertiary-fixed-variant": "#5d4200",
+                "background": "#161307",
+                "on-secondary-fixed-variant": "#7e2c00",
+                "primary-container": "#1a0f0a",
+                "on-surface": "#eae2cd",
+                "surface-container-highest": "#383526",
+                "surface": "#161307",
+                "surface-tint": "#d8c2b9",
+                "outline-variant": "#4e4541",
+                "surface-container-high": "#2d2a1c",
+                "tertiary-fixed": "#ffdea6",
+                "error-container": "#93000a",
+                "on-secondary": "#591d00",
+                "on-tertiary": "#412d00",
+                "on-surface-variant": "#d2c4be",
+                "brand-accent": "#B33E2B",
+                "hero-bg": "#EDE5D4",
+                "espresso": "#1A0F0A",
+                "burnt": "#C85C2A",
+                "gold": "#D4A853",
+                "sage": "#8B9E7A",
+                "cream": "#F5EDD8"
+            },
+            borderRadius: {
+                DEFAULT: "0.125rem",
+                lg: "0.25rem",
+                xl: "0.5rem",
+                full: "0.75rem"
+            },
+            spacing: {
+                "margin-desktop": "64px",
+                "margin-mobile": "16px",
+                "container-max": "1280px",
+                unit: "4px",
+                gutter: "24px"
+            },
+            fontFamily: {
+                h2: ["Playfair Display"],
+                "display-lg": ["Bebas Neue"],
+                "display-xl": ["Bebas Neue"],
+                "display-lg-mobile": ["Bebas Neue"],
+                "h1-mobile": ["Playfair Display"],
+                "body-lg": ["DM Sans"],
+                "body-md": ["DM Sans"],
+                h1: ["Playfair Display"],
+                "body-sm": ["DM Sans"],
+                h3: ["Playfair Display"],
+                "label-caps": ["DM Sans"]
+            },
+            fontSize: {
+                h2: ["32px", { lineHeight: "40px", fontWeight: "600" }],
+                "display-lg": ["80px", { lineHeight: "80px", fontWeight: "400" }],
+                "display-xl": ["120px", { lineHeight: "100px", letterSpacing: "0.02em", fontWeight: "400" }],
+                "display-lg-mobile": ["56px", { lineHeight: "56px", fontWeight: "400" }],
+                "h1-mobile": ["36px", { lineHeight: "44px", fontWeight: "700" }],
+                "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+                "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+                h1: ["48px", { lineHeight: "56px", fontWeight: "700" }],
+                "body-sm": ["14px", { lineHeight: "20px", fontWeight: "300" }],
+                h3: ["24px", { lineHeight: "32px", fontWeight: "600" }],
+                "label-caps": ["12px", { lineHeight: "16px", letterSpacing: "0.1em", fontWeight: "500" }]
+            }
+        }
+    }
+}
+</script>
+<style>
+    :root {
+        --espresso: #1A0F0A;
+        --mid: #2E1B12;
+        --hero-bg: #EDE5D4;
+        --burnt: #C85C2A;
+        --terracotta: #B33E2B;
+        --gold: #D4A853;
+        --sage: #8B9E7A;
+        --cream: #F5EDD8;
+    }
+    body { font-family: 'DM Sans', sans-serif; }
+    .grain-overlay {
+        position: fixed; top: 0; left: 0;
+        width: 100%; height: 100%;
+        pointer-events: none; z-index: 9999;
+        opacity: 0.04;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    }
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+    .text-glow { text-shadow: 0 0 40px rgba(216, 194, 185, 0.15); }
+    /* Hero-specific grain (inset, not fixed) */
+    .hero-grain {
+        position: absolute; inset: 0;
+        pointer-events: none; opacity: 0.05;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    }
+    .text-burnt { color: var(--burnt); }
+    .text-terracotta { color: var(--terracotta); }
+    .bg-burnt { background-color: var(--burnt); }
+    .border-gold { border-color: var(--gold); }
+    .text-gold { color: var(--gold); }
+    .bg-gold { background-color: var(--gold); }
+    .bg-espresso { background-color: var(--espresso); }
+    .text-cream { color: var(--cream); }
+    .text-sage { color: var(--sage); }
+    /* Marquee */
+    .marquee-container { overflow: hidden; white-space: nowrap; }
+    .marquee-content { display: inline-block; animation: marquee 30s linear infinite; }
+    @keyframes marquee {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+    }
+    /* Radial glow behind coffee image */
+    .radial-glow {
+        background: radial-gradient(circle, rgba(212,168,83,0.3) 0%, rgba(245,237,216,0.1) 50%, rgba(212,168,83,0) 80%);
+    }
+    /* Hero entrance animations */
+    @keyframes fade-in-section { from{opacity:0} to{opacity:1} }
+    @keyframes reveal-hero-text {
+        0%   { opacity:0; transform:scale(0.98); filter:blur(8px); }
+        100% { opacity:0.8; transform:scale(1); filter:blur(0); }
+    }
+    @keyframes fade-in-up {
+        from { opacity:0; transform:translateY(20px); }
+        to   { opacity:1; transform:translateY(0); }
+    }
+    @keyframes fade-in-down {
+        from { opacity:0; transform:translateY(-20px); }
+        to   { opacity:1; transform:translateY(0); }
+    }
+    .animate-hero-bg    { animation: fade-in-section 1s ease-out forwards; }
+    .animate-giant-text { animation: reveal-hero-text 1.5s cubic-bezier(0.22,1,0.36,1) forwards; opacity:0; }
+    .animate-coffee-cup { animation: fade-in-up 1.2s cubic-bezier(0.34,1.56,0.64,1) forwards; opacity:0; }
+    .animate-nav-item   { animation: fade-in-down 0.8s ease-out forwards; opacity:0; }
+    .animate-stat-item  { animation: fade-in-up 0.8s ease-out forwards; opacity:0; }
+    @media (prefers-reduced-motion: reduce) {
+        .animate-hero-bg,.animate-giant-text,.animate-coffee-cup,.animate-nav-item,.animate-stat-item {
+            animation: fade-in-section 0.5s ease-out forwards;
+            transform: none !important; filter: none !important;
+        }
+    }
+    /* Dark nav for sections below hero */
+    nav.scrolled {
+        background: rgba(22,19,7,0.95) !important;
+        backdrop-filter: blur(16px);
+        border-bottom: 1px solid rgba(78,69,65,0.3);
+    }
+    .mobile-menu { display: none; }
+    .mobile-menu.open { display: flex; }
+</style>
+</head>
+<body class="bg-background text-on-background selection:bg-brand-accent selection:text-white antialiased">
+<div class="grain-overlay"></div>
+
+<!-- SVG Filters -->
+<svg class="absolute" height="0" width="0">
+    <filter id="distress">
+        <feturbulence basefrequency="0.05" numoctaves="3" result="noise" type="fractalNoise"></feturbulence>
+        <fedisplacementmap in="SourceGraphic" in2="noise" scale="5" xchannelselector="R" ychannelselector="G"></fedisplacementmap>
+    </filter>
+</svg>
+
+<!-- ═══════════════════ HERO (from Stitch: Reveal Animation Refresh) ═══════════════════ -->
+<section class="relative w-full min-h-screen overflow-hidden flex flex-col justify-between animate-hero-bg" id="hero" style="background-color:var(--hero-bg);">
+    <div class="hero-grain"></div>
+
+    <!-- Header Row: Burger | Logo | Profile -->
+    <div class="relative z-30 w-full flex justify-between items-center px-margin-mobile md:px-margin-desktop py-6">
+        <!-- Burger (mobile) -->
+        <button aria-label="Open menu" class="text-espresso hover:text-burnt transition-colors animate-nav-item" id="menuToggle" style="animation-delay:0.4s;">
+            <div class="flex flex-col gap-1.5 w-6">
+                <span class="h-[1.5px] bg-current w-full"></span>
+                <span class="h-[1.5px] bg-current w-full"></span>
+            </div>
+        </button>
+        <!-- Center Logo -->
+        <div class="flex flex-col items-center gap-1 animate-nav-item" style="animation-delay:0.5s;">
+            <div class="flex items-center gap-2">
+                <span class="font-display-lg-mobile text-[24px] leading-none tracking-widest border-l-2 pl-2" style="color:var(--espresso);border-color:var(--espresso);">CAFÉ</span>
+                <span class="font-display-lg-mobile text-[24px] leading-none tracking-widest" style="color:var(--espresso);">CAFFEINATED</span>
+            </div>
+            <span class="font-label-caps text-[8px] uppercase tracking-[0.3em]" style="color:var(--espresso);">ROYAL BEVERAGE EXPERIENCE</span>
+        </div>
+        <!-- Desktop nav links (hidden on hero for clean look, shown via scroll) + Reserve CTA -->
+        <div class="hidden md:flex items-center gap-6 animate-nav-item" style="animation-delay:0.6s;">
+            <a class="font-label-caps text-label-caps uppercase tracking-[0.2em] hover:text-burnt transition-colors" style="color:var(--espresso);" href="menu.html">Menu</a>
+            <a class="font-label-caps text-label-caps uppercase tracking-[0.2em] hover:text-burnt transition-colors" style="color:var(--espresso);" href="about.html">Story</a>
+            <a class="font-label-caps text-label-caps uppercase tracking-[0.2em] hover:text-burnt transition-colors" style="color:var(--espresso);" href="reservations.html">Reserve</a>
+        </div>
+        <!-- Mobile profile badge -->
+        <div class="w-10 h-10 rounded-full border flex items-center justify-center cursor-pointer md:hidden animate-nav-item" style="border-color:rgba(26,15,10,0.2);animation-delay:0.6s;">
+            <span class="font-body-sm text-body-sm font-bold" style="color:var(--espresso);">AL</span>
+        </div>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="relative flex-grow flex flex-col justify-center container mx-auto px-margin-mobile md:px-margin-desktop">
+        <!-- CC EST. NOIDA badge - top left -->
+        <div class="absolute left-8 top-12 md:left-24 md:top-20 z-20 animate-nav-item" style="animation-delay:0.7s;">
+            <div class="w-20 h-20 md:w-28 md:h-28 rounded-full flex items-center justify-center bg-transparent backdrop-blur-sm" style="border:1px solid rgba(26,15,10,0.3);">
+                <span class="font-display-lg-mobile text-[12px] md:text-[16px] text-center leading-tight" style="color:var(--espresso);">CC<br/>EST.<br/>NOIDA</span>
+            </div>
+        </div>
+        <!-- Descriptor text - top right -->
+        <div class="absolute right-8 top-12 md:right-24 md:top-24 z-20 max-w-[180px] md:max-w-[220px] animate-nav-item" style="animation-delay:0.8s;">
+            <p class="font-label-caps text-[10px] md:text-[12px] uppercase tracking-widest leading-relaxed text-right opacity-70" style="color:var(--espresso);">Experience true freshness crafted with royal precision in every cup.</p>
+        </div>
+        <!-- Giant distressed background text -->
+        <div class="absolute inset-0 flex items-center justify-center pointer-events-none z-0 overflow-hidden" style="filter:url(#distress);">
+            <h1 class="font-display-xl leading-none m-0 p-0 text-center whitespace-nowrap animate-giant-text"
+                style="font-size:clamp(80px,15vw,180px);color:var(--terracotta);mix-blend-mode:multiply;filter:contrast(1.1) brightness(0.9);animation-delay:0.2s;">
+                CAFÉ CAFFEINATED
+            </h1>
+        </div>
+        <!-- Centre focal: Coffee splash photo -->
+        <div class="relative z-10 flex items-center justify-center w-full">
+            <!-- Radial glow -->
+            <div class="absolute w-[150%] h-[150%] pointer-events-none radial-glow"></div>
+            <!-- Coffee splash with parallax -->
+            <div class="relative max-w-[90vw] md:max-w-4xl lg:max-w-5xl transition-transform duration-100 ease-out animate-coffee-cup" id="parallaxCoffee" style="animation-delay:0.3s;">
+                <img alt="Premium Coffee Splash"
+                     class="w-full h-auto hover:scale-105 transition-transform duration-700"
+                     style="drop-shadow:0 35px 60px rgba(26,15,10,0.3);"
+                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkv33umzNdf7jsFXDpDYmQFoyCJ2hE90UzxXwaAbg5IqetunsiGswnBg3uyN8D8HolGD3QQLDzYbQBiIZSnfT3wK7BM9Hd3qJct8IdwsLnKqWF49z9EIr2zfXVx90ZqBEbaVj6VjuyKSJPDqqw8F69gyrc9gijaqcIwlKy3DTlordGhkOkM3InDFJ9RRoCOu_Ws055FxsJKJhM_uiYr2c9hHznr1oVK6JI_suISnFssqit3skfnKZKB8Jy73-KxrmHUADT1I5z2LTB"/>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Row: Stats + CTAs -->
+    <div class="relative z-30 container mx-auto px-margin-mobile md:px-margin-desktop py-12 flex flex-col md:flex-row justify-between items-center md:items-end gap-8">
+        <div class="flex flex-col items-center md:items-start animate-stat-item" style="animation-delay:0.9s;">
+            <span class="font-display-lg-mobile text-[32px] leading-none" style="color:var(--espresso);">4.6<span class="text-sm font-body-sm ml-2 align-middle" style="color:var(--espresso);">Google Rating</span></span>
+            <span class="font-display-lg-mobile text-[24px] leading-none mt-1 text-burnt">1951<span class="text-sm font-body-sm ml-2 align-middle" style="color:var(--espresso);">Reviews</span></span>
+        </div>
+        <div class="flex gap-4 animate-stat-item" style="animation-delay:1s;">
+            <a class="bg-burnt text-cream font-label-caps text-label-caps px-8 py-4 uppercase tracking-widest hover:opacity-90 transition-opacity shadow-lg" href="menu.html">EXPLORE MENU</a>
+            <a class="bg-transparent font-label-caps text-label-caps px-8 py-4 uppercase tracking-widest border text-gold border-gold hover:bg-gold/10 transition-colors" href="visit.html">FIND US</a>
+        </div>
+    </div>
+</section>
+
+<!-- Mobile Menu Overlay -->
+<div class="mobile-menu fixed inset-0 z-40 bg-background/98 backdrop-blur-xl flex-col items-center justify-center gap-10 transition-all" id="mobileMenu">
+    <button class="absolute top-6 right-6 text-on-surface-variant" id="menuClose"><span class="material-symbols-outlined text-3xl">close</span></button>
+    <a class="font-display-lg text-[40px] text-primary uppercase" href="menu.html">The Menu</a>
+    <a class="font-display-lg text-[40px] text-primary uppercase" href="about.html">Our Story</a>
+    <a class="font-display-lg text-[40px] text-primary uppercase" href="gallery.html">Gallery</a>
+    <a class="font-display-lg text-[40px] text-primary uppercase" href="reviews.html">Reviews</a>
+    <a class="font-display-lg text-[40px] text-primary uppercase" href="visit.html">Visit Us</a>
+    <a class="mt-4 bg-brand-accent text-white px-12 py-5 font-label-caps text-label-caps tracking-[0.15em] uppercase text-xl" href="reservations.html">Book a Table</a>
+</div>
+
+<!-- ═══════════════════ GOLD MARQUEE TICKER (exact from Stitch) ═══════════════════ -->
+<div class="w-full py-3 marquee-container overflow-hidden" style="background-color:var(--gold);border-top:1px solid rgba(26,15,10,0.1);border-bottom:1px solid rgba(26,15,10,0.1);">
+    <div class="marquee-content flex items-center gap-12 whitespace-nowrap">
+        <span class="font-label-caps uppercase tracking-widest text-[14px]" style="color:var(--espresso);">Royal Brews</span>
+        <span class="opacity-30" style="color:var(--espresso);">•</span>
+        <span class="font-label-caps uppercase tracking-widest text-[14px]" style="color:var(--espresso);">Freshly Roasted</span>
+        <span class="opacity-30" style="color:var(--espresso);">•</span>
+        <span class="font-label-caps uppercase tracking-widest text-[14px]" style="color:var(--espresso);">Artisanal Experience</span>
+        <span class="opacity-30" style="color:var(--espresso);">•</span>
+        <span class="font-label-caps uppercase tracking-widest text-[14px]" style="color:var(--espresso);">Noida's Finest</span>
+        <span class="opacity-30" style="color:var(--espresso);">•</span>
+        <span class="font-label-caps uppercase tracking-widest text-[14px]" style="color:var(--espresso);">Sector 144</span>
+        <span class="opacity-30" style="color:var(--espresso);">•</span>
+        <span class="font-label-caps uppercase tracking-widest text-[14px]" style="color:var(--espresso);">Royal Brews</span>
+        <span class="opacity-30" style="color:var(--espresso);">•</span>
+        <span class="font-label-caps uppercase tracking-widest text-[14px]" style="color:var(--espresso);">Freshly Roasted</span>
+        <span class="opacity-30" style="color:var(--espresso);">•</span>
+        <span class="font-label-caps uppercase tracking-widest text-[14px]" style="color:var(--espresso);">Artisanal Experience</span>
+        <span class="opacity-30" style="color:var(--espresso);">•</span>
+        <span class="font-label-caps uppercase tracking-widest text-[14px]" style="color:var(--espresso);">Noida's Finest</span>
+        <span class="opacity-30" style="color:var(--espresso);">•</span>
+        <span class="font-label-caps uppercase tracking-widest text-[14px]" style="color:var(--espresso);">Sector 144</span>
+    </div>
+</div>
+
+<!-- ═══════════════════ NAVIGATION CARDS ═══════════════════ -->
+<section class="py-32 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+    <div class="mb-16 text-center">
+        <span class="font-label-caps text-label-caps text-secondary tracking-widest uppercase block mb-3">Explore</span>
+        <h2 class="font-h1 text-h1 text-on-surface text-glow">Everything Caffeinated</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Menu Card -->
+        <a class="group relative overflow-hidden border border-outline-variant/20 bg-surface-container hover:bg-surface-container-high transition-all duration-500 block" href="menu.html">
+            <div class="absolute inset-0 bg-gradient-to-br from-secondary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <img alt="Artisan coffee and food" class="w-full h-48 object-cover opacity-50 group-hover:opacity-70 group-hover:scale-105 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqT9PH1ctVEzqzXhFQsb9bI8FJ7-tTIgWC5yToWbQdA2Qd60Oy-Cf1MEp6faSpXpIL9THg5xYF0ubYKLrzzldGFTRkmDbDtuQakkXckhg8uST4YWfN2EaZH1JziXFOgNoNHIV02eQm9HFfU4Pu8CwC6niusush8cbuuZP3gK4V4xEPgjZtz6ci5SKa7NbveKiwcOWTRndgFe-lwC48NTRzjc6KDm4DSDDqGXSecZvb_BXzSzsE7EornEqlxv6tIew3qiIBTSb8UeqH"/>
+            <div class="p-8 relative z-10">
+                <span class="material-symbols-outlined text-secondary mb-4 block text-3xl">menu_book</span>
+                <h3 class="font-h3 text-h3 text-on-surface mb-2">The Menu</h3>
+                <p class="font-body-sm text-body-sm text-on-surface-variant">Precision roasts & fusion fare curated for the discerning palate.</p>
+                <span class="font-label-caps text-label-caps text-secondary uppercase tracking-widest flex items-center gap-2 mt-6 group-hover:gap-4 transition-all">Explore <span class="material-symbols-outlined text-sm">arrow_forward</span></span>
+            </div>
+        </a>
+        <!-- About Card -->
+        <a class="group relative overflow-hidden border border-outline-variant/20 bg-surface-container hover:bg-surface-container-high transition-all duration-500 block" href="about.html">
+            <div class="absolute inset-0 bg-gradient-to-br from-tertiary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <img alt="Cafe interior" class="w-full h-48 object-cover opacity-50 group-hover:opacity-70 group-hover:scale-105 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCosQ5MBj9sgvE3tkwNwCVt4MttuBaFQEGh6_yD-LRKuYnCDdaDESxTgonrtXubMqOAGyowj7CMcTKzB7bIuclxP8s62QMo-3zjzaG1wstoVk1nJ3uI1RnU9MTb0zUbFFnNNnjikaIOPdZhv2Gl8fKHn5nbi4qYQiBwdBK0SjrBRjOFFr_2LHD9I6U1yZZ1-E92B1oiwTFBSgroZD_Ga2_d7jqniHsqVg0W3YWSNO1G44eqVNKmXO0SkaS3bhwF5OuwKnBaz-kxVvoT"/>
+            <div class="p-8 relative z-10">
+                <span class="material-symbols-outlined text-tertiary mb-4 block text-3xl">auto_stories</span>
+                <h3 class="font-h3 text-h3 text-on-surface mb-2">Our Story</h3>
+                <p class="font-body-sm text-body-sm text-on-surface-variant">An intentional pause in the relentless city. Born from philosophy.</p>
+                <span class="font-label-caps text-label-caps text-tertiary uppercase tracking-widest flex items-center gap-2 mt-6 group-hover:gap-4 transition-all">Read More <span class="material-symbols-outlined text-sm">arrow_forward</span></span>
+            </div>
+        </a>
+        <!-- Gallery Card -->
+        <a class="group relative overflow-hidden border border-outline-variant/20 bg-surface-container hover:bg-surface-container-high transition-all duration-500 block" href="gallery.html">
+            <div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <img alt="Gallery" class="w-full h-48 object-cover opacity-50 group-hover:opacity-70 group-hover:scale-105 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBP-KLY6WLGrwGGCkhj9GrHMQKgF7Gd8rmQ0uYz_9XuDq1xOyyxYi6kTimnjUEs2nlxrkUVFqzvFuGLa7SdVM28m-5VyCKE9tuuk9_kNs2feX6TfqPcQwuYSe2ixN-ngn_GIIDb8ouZsqALKfpuMTBhQM0P89AAc3r5Kh-Iy5N9WmZAXt5mCKdBr5qkE_j6tVy7bqwWlUlkVZ_JyuxiwOhoHsxgkFrRCDSL9lHsaH0z0ysDscMwRUVj-97g34F3WOPV-SsV9Dnpf_ka"/>
+            <div class="p-8 relative z-10">
+                <span class="material-symbols-outlined text-primary mb-4 block text-3xl">photo_library</span>
+                <h3 class="font-h3 text-h3 text-on-surface mb-2">Gallery</h3>
+                <p class="font-body-sm text-body-sm text-on-surface-variant">Visual stories from our sanctuary — spaces, brews, and moments.</p>
+                <span class="font-label-caps text-label-caps text-primary uppercase tracking-widest flex items-center gap-2 mt-6 group-hover:gap-4 transition-all">View Gallery <span class="material-symbols-outlined text-sm">arrow_forward</span></span>
+            </div>
+        </a>
+        <!-- Reviews Card -->
+        <a class="group relative overflow-hidden border border-outline-variant/20 bg-surface-container hover:bg-surface-container-high transition-all duration-500 block" href="reviews.html">
+            <div class="p-8 relative z-10 h-full flex flex-col">
+                <span class="material-symbols-outlined text-gold mb-4 block text-3xl">star</span>
+                <h3 class="font-h3 text-h3 text-on-surface mb-2">Reviews</h3>
+                <p class="font-body-sm text-body-sm text-on-surface-variant flex-1">4.6 stars. 1,951 voices. What our guests are saying.</p>
+                <div class="flex gap-1 mt-4">
+                    <span class="text-gold text-xl">★★★★★</span>
+                </div>
+                <span class="font-label-caps text-label-caps text-gold uppercase tracking-widest flex items-center gap-2 mt-6 group-hover:gap-4 transition-all">Read Reviews <span class="material-symbols-outlined text-sm">arrow_forward</span></span>
+            </div>
+        </a>
+        <!-- Visit Card -->
+        <a class="group relative overflow-hidden border border-outline-variant/20 bg-surface-container hover:bg-surface-container-high transition-all duration-500 block" href="visit.html">
+            <div class="p-8 relative z-10 h-full flex flex-col">
+                <span class="material-symbols-outlined text-sage mb-4 block text-3xl">location_on</span>
+                <h3 class="font-h3 text-h3 text-on-surface mb-2">Visit Us</h3>
+                <p class="font-body-sm text-body-sm text-on-surface-variant flex-1">Sector 144, Noida. Open daily 08:00 – 22:00.</p>
+                <div class="mt-4 space-y-2">
+                    <p class="font-label-caps text-label-caps text-on-surface-variant tracking-widest">Mon – Sun</p>
+                    <p class="font-label-caps text-label-caps text-primary tracking-widest">08:00 — 22:00</p>
+                </div>
+                <span class="font-label-caps text-label-caps uppercase tracking-widest flex items-center gap-2 mt-6 group-hover:gap-4 transition-all" style="color: var(--sage)">Get Directions <span class="material-symbols-outlined text-sm">arrow_forward</span></span>
+            </div>
+        </a>
+        <!-- Reservations Card -->
+        <a class="group relative overflow-hidden border border-brand-accent bg-brand-accent/10 hover:bg-brand-accent/20 transition-all duration-500 block" href="reservations.html">
+            <div class="absolute -right-12 -bottom-12 w-48 h-48 border border-brand-accent/20 rounded-full group-hover:scale-110 transition-transform duration-700"></div>
+            <div class="p-8 relative z-10 h-full flex flex-col">
+                <span class="material-symbols-outlined text-brand-accent mb-4 block text-3xl">event_seat</span>
+                <h3 class="font-h3 text-h3 text-on-surface mb-2">Reservations</h3>
+                <p class="font-body-sm text-body-sm text-on-surface-variant flex-1">Secure your intentional pause. Book your table in seconds.</p>
+                <span class="font-label-caps text-label-caps text-brand-accent uppercase tracking-widest flex items-center gap-2 mt-6 group-hover:gap-4 transition-all">Book Now <span class="material-symbols-outlined text-sm">arrow_forward</span></span>
+            </div>
+        </a>
+    </div>
+</section>
+
+<!-- ═══════════════════ PHILOSOPHY STRIP ═══════════════════ -->
+<section class="bg-surface-container-lowest border-y border-outline-variant/20 py-24 px-margin-mobile md:px-margin-desktop">
+    <div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-3 gap-16 items-center">
+        <div class="md:col-span-1">
+            <span class="font-label-caps text-label-caps text-secondary tracking-widest uppercase block mb-4">Our Philosophy</span>
+            <h2 class="font-h2 text-h2 text-on-surface">Time is the ultimate luxury.</h2>
+        </div>
+        <div class="md:col-span-2 font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+            In an era of constant acceleration, our space is deliberately calibrated to slow you down. The heavy pages of a book, the precise pour of a single-origin roast, the dappled light filtering through lush foliage — every detail is an invitation to remain present.
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════ STATS BAR ═══════════════════ -->
+<section class="py-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div class="border-b border-outline-variant/30 pb-8">
+            <div class="font-display-lg text-[52px] text-secondary leading-none mb-2">4.6</div>
+            <div class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">Google Rating</div>
+        </div>
+        <div class="border-b border-outline-variant/30 pb-8">
+            <div class="font-display-lg text-[52px] text-primary leading-none mb-2">1951</div>
+            <div class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">Happy Guests</div>
+        </div>
+        <div class="border-b border-outline-variant/30 pb-8">
+            <div class="font-display-lg text-[52px] text-tertiary leading-none mb-2">48+</div>
+            <div class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">Menu Items</div>
+        </div>
+        <div class="border-b border-outline-variant/30 pb-8">
+            <div class="font-display-lg text-[52px] text-on-surface leading-none mb-2">14</div>
+            <div class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">Hrs Open Daily</div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════ FOOTER ═══════════════════ -->
+<footer class="w-full border-t border-outline-variant/20 bg-surface-container-lowest py-24">
+    <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-16 md:gap-gutter">
+            <div class="md:col-span-5">
+                <div class="font-display-lg text-[52px] text-secondary mb-8 leading-none tracking-tighter uppercase">CAFÉ<br/>CAFFEINATED</div>
+                <p class="font-body-md text-on-surface-variant max-w-sm leading-relaxed opacity-70 mb-10">Noida's premier sanctuary for the intellectual spirit. A blend of heritage luxury and brutalist botany.</p>
+                <div class="flex space-x-6">
+                    <a class="w-10 h-10 border border-outline-variant/30 flex items-center justify-center rounded-full text-on-surface-variant hover:text-secondary hover:border-secondary transition-all" href="#"><span class="material-symbols-outlined text-[20px]">share</span></a>
+                    <a class="w-10 h-10 border border-outline-variant/30 flex items-center justify-center rounded-full text-on-surface-variant hover:text-secondary hover:border-secondary transition-all" href="#"><span class="material-symbols-outlined text-[20px]">mail</span></a>
+                    <a class="w-10 h-10 border border-outline-variant/30 flex items-center justify-center rounded-full text-on-surface-variant hover:text-secondary hover:border-secondary transition-all" href="#"><span class="material-symbols-outlined text-[20px]">photo_camera</span></a>
+                </div>
+            </div>
+            <div class="md:col-span-3">
+                <h5 class="font-label-caps text-label-caps text-primary mb-8 uppercase tracking-[0.3em]">Navigate</h5>
+                <ul class="space-y-5">
+                    <li><a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary transition-colors tracking-widest" href="menu.html">The Menu</a></li>
+                    <li><a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary transition-colors tracking-widest" href="about.html">Our Story</a></li>
+                    <li><a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary transition-colors tracking-widest" href="gallery.html">Gallery</a></li>
+                    <li><a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary transition-colors tracking-widest" href="reviews.html">Reviews</a></li>
+                    <li><a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary transition-colors tracking-widest" href="visit.html">Visit Us</a></li>
+                    <li><a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary transition-colors tracking-widest" href="reservations.html">Reservations</a></li>
+                </ul>
+            </div>
+            <div class="md:col-span-4">
+                <h5 class="font-label-caps text-label-caps text-primary mb-8 uppercase tracking-[0.3em]">Newsletter</h5>
+                <p class="font-body-sm text-on-surface-variant mb-6 opacity-70">Subscribe for seasonal updates and private event invites.</p>
+                <div class="flex border-b border-outline-variant/30 py-2">
+                    <input class="bg-transparent border-none focus:ring-0 w-full font-label-caps text-label-caps text-on-surface py-2 placeholder:text-outline/50 outline-none" placeholder="YOUR EMAIL" type="email"/>
+                    <button class="text-secondary hover:translate-x-1 transition-transform"><span class="material-symbols-outlined">arrow_forward</span></button>
+                </div>
+                <p class="mt-12 font-body-sm text-on-surface-variant opacity-50 text-[12px] tracking-widest">© 2024 CAFÉ CAFFEINATED. ALL RIGHTS RESERVED.</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Mobile menu
+    document.getElementById('menuToggle').addEventListener('click', () => {
+        document.getElementById('mobileMenu').classList.add('open');
+    });
+    document.getElementById('menuClose').addEventListener('click', () => {
+        document.getElementById('mobileMenu').classList.remove('open');
+    });
+
+    // Parallax coffee image on scroll
+    document.addEventListener('DOMContentLoaded', () => {
+        const coffeeEl = document.getElementById('parallaxCoffee');
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (!prefersReducedMotion && coffeeEl) {
+            window.addEventListener('scroll', () => {
+                const scrollY = window.scrollY;
+                if (scrollY < window.innerHeight) {
+                    requestAnimationFrame(() => {
+                        coffeeEl.style.transform = `translateY(${scrollY * -0.15}px)`;
+                    });
+                }
+            }, { passive: true });
+        }
+    });
+</script>
+</body>
+</html>
